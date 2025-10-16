@@ -43,6 +43,7 @@ All colors MUST be HSL.
     --hero-gradient-to: 221 70% 25%;
     --success-green: 158 77% 39%;
     --trust-text: 221 15% 50%;
+    --testimonial-bg: 220 20% 98%;
   }
 
   .dark {

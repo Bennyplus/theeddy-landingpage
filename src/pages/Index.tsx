@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import heroImage from "@/assets/hero-image.jpg";
-import { Mail, CheckCircle, Key, Lightbulb } from "lucide-react";
+import { Mail, CheckCircle, Key, Lightbulb, Star } from "lucide-react";
 
 const Index = () => {
   const [email, setEmail] = useState("");
@@ -132,6 +132,40 @@ const Index = () => {
                 Get our proven email and post templates that convert curious visitors into paying customers.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Social Proof / Testimonial Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: 'hsl(var(--testimonial-bg))' }}>
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center text-foreground mb-12">
+            Join Thousands of Successful Marketers
+          </h2>
+          
+          <div className="bg-white rounded-2xl shadow-lg p-8 sm:p-12 mx-auto max-w-3xl">
+            <div className="text-center space-y-6">
+              <p className="text-lg sm:text-xl italic text-foreground leading-relaxed">
+                "This free guide was the push I needed. I went from zero to making my first $500 sale in just 3 weeks. The strategies actually work!"
+              </p>
+              
+              <div className="space-y-3">
+                <p className="font-semibold text-foreground">- Jamie R.</p>
+                
+                <div className="flex justify-center gap-1">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <Star key={star} className="w-5 h-5 fill-accent text-accent" />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Carousel Dots */}
+          <div className="flex justify-center gap-2 mt-8">
+            <div className="w-3 h-3 rounded-full bg-accent"></div>
+            <div className="w-3 h-3 rounded-full bg-muted"></div>
+            <div className="w-3 h-3 rounded-full bg-muted"></div>
           </div>
         </div>
       </section>
