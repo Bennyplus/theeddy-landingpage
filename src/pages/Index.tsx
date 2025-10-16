@@ -1,6 +1,12 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { toast } from "sonner";
 import heroImage from "@/assets/hero-image.jpg";
 import { Mail, CheckCircle, Key, Lightbulb, Star } from "lucide-react";
@@ -169,6 +175,102 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center text-foreground mb-12">
+            Frequently Asked Questions
+          </h2>
+          
+          <Accordion type="single" collapsible className="w-full space-y-4">
+            <AccordionItem value="item-1" className="border border-border rounded-lg px-6">
+              <AccordionTrigger className="text-left font-bold text-primary hover:no-underline">
+                Is this guide really free?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground leading-relaxed">
+                Yes! This guide is 100% free. We provide it to you in exchange for joining our email list where we share more advanced tips and product recommendations.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-2" className="border border-border rounded-lg px-6">
+              <AccordionTrigger className="text-left font-bold text-primary hover:no-underline">
+                What will I be subscribed to?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground leading-relaxed">
+                You'll be added to our [Affiliate Marketer's Name] newsletter. You'll receive the free guide immediately, followed by a short welcome series, and then 1-2 emails per week with valuable tips, insights, and affiliate offers we believe in.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-3" className="border border-border rounded-lg px-6">
+              <AccordionTrigger className="text-left font-bold text-primary hover:no-underline">
+                I'm a complete beginner. Is this for me?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground leading-relaxed">
+                Absolutely! The guide is specifically designed for beginners. It breaks down complex topics into simple, actionable steps.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </div>
+      </section>
+
+      {/* Final CTA Section */}
+      <section className="hero-gradient py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+            Ready to Start Your Affiliate Marketing Journey?
+          </h2>
+          
+          <p className="text-lg sm:text-xl text-white/90 mb-8">
+            Grab your FREE guide and join our community now!
+          </p>
+
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div className="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
+              <div className="relative flex-1">
+                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                <Input
+                  type="email"
+                  placeholder="Enter your best email address..."
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="pl-10 h-14 text-base bg-white border-white/20 focus:ring-accent"
+                  disabled={isSubmitting}
+                />
+              </div>
+              <Button
+                type="submit"
+                size="lg"
+                className="h-14 px-8 bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-base shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Sending..." : "Send My Guide!"}
+              </Button>
+            </div>
+            
+            <p className="text-sm text-white/70">
+              🔒 We respect your privacy. Unsubscribe at any time.
+            </p>
+          </form>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-primary py-8 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto text-center space-y-4">
+          <p className="text-white text-sm">
+            © {new Date().getFullYear()} [Affiliate Marketer's Brand Name]. All Rights Reserved.
+          </p>
+          <div className="flex justify-center gap-6">
+            <a href="#" className="text-accent underline hover:text-accent/80 transition-colors text-sm">
+              Privacy Policy
+            </a>
+            <a href="#" className="text-accent underline hover:text-accent/80 transition-colors text-sm">
+              Terms of Service
+            </a>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 };
