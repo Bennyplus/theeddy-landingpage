@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import heroImage from "@/assets/hero-image.jpg";
-import { Mail } from "lucide-react";
+import { Mail, CheckCircle, Key, Lightbulb } from "lucide-react";
 
 const Index = () => {
   const [email, setEmail] = useState("");
@@ -87,6 +87,50 @@ const Index = () => {
                 alt="Success illustration - person working on laptop"
                 className="w-full h-auto rounded-2xl shadow-2xl"
               />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center text-foreground mb-16">
+            Here's Exactly What You'll Get In Your Free Guide
+          </h2>
+          
+          <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+            {/* Point 1 */}
+            <div className="text-center space-y-4">
+              <div className="flex justify-center">
+                <CheckCircle className="w-16 h-16 text-accent" strokeWidth={1.5} />
+              </div>
+              <h3 className="text-xl font-bold text-foreground">The Foundation</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Learn how to pick the right, high-converting products in a niche you're passionate about.
+              </p>
+            </div>
+
+            {/* Point 2 */}
+            <div className="text-center space-y-4">
+              <div className="flex justify-center">
+                <Key className="w-16 h-16 text-accent" strokeWidth={1.5} />
+              </div>
+              <h3 className="text-xl font-bold text-foreground">Traffic Secrets</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Discover the 3 most effective methods to drive free, targeted traffic to your links without a big budget.
+              </p>
+            </div>
+
+            {/* Point 3 */}
+            <div className="text-center space-y-4">
+              <div className="flex justify-center">
+                <Lightbulb className="w-16 h-16 text-accent" strokeWidth={1.5} />
+              </div>
+              <h3 className="text-xl font-bold text-foreground">Copywriting Hacks</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Get our proven email and post templates that convert curious visitors into paying customers.
+              </p>
             </div>
           </div>
         </div>
