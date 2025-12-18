@@ -2,20 +2,14 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+
 import { toast } from "sonner";
 import {
-  Zap,
+
   Sparkles,
   BookOpen,
   RefreshCw,
   Clock,
-  Trophy,
 } from "lucide-react";
 import { Mail, Youtube, Twitter, Instagram, Lock, Shield, Star, ArrowUp } from "lucide-react";
 
@@ -133,9 +127,9 @@ const Index = () => {
         </div>
 
         <div className="relative max-w-7xl mx-auto z-10">
-          <div className=" gap-12 xl:gap-20 items-center">
-            {/* Left – Copy + Form */}
-            <div className="text-center lg:text-left space-y-12 order-2 lg:order-1">
+          <div className="flex flex-col items-center justify-center text-center gap-12 xl:gap-20">
+            {/* Copy + Form */}
+            <div className="w-full flex flex-col items-center text-center space-y-12">
               {/* Headline */}
               <div className="space-y-4">
                 <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight">
@@ -146,14 +140,14 @@ const Index = () => {
                   </span>
                 </h1>
 
-                <p className="text-xl lg:text-2xl text-foreground/80 max-w-3xl mx-auto lg:mx-0">
+                <p className="text-xl lg:text-2xl text-foreground/80 max-w-3xl mx-auto">
                   Hand-picked AI tools, plug-and-play prompts, and proven
                   playbooks the top 1% use — without burning out.
                 </p>
               </div>
 
               {/* Social Proof */}
-              <div className="text-center lg:text-left">
+              <div className="text-center ">
                 <p className="text-lg italic text-trust">
                   “Went from 2 posts/week to daily content + $8k extra affiliate
                   revenue in 47 days.” — @hustlerpro
@@ -163,29 +157,37 @@ const Index = () => {
               {/* Email Form + CTA */}
               <form
                 onSubmit={handleSubmit}
-                className="space-y-6 max-w-xl mx-auto lg:mx-0"
+                className="space-y-6 w-full max-w-2xl mx-auto"
               >
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <div className="relative flex-1">
+                <div className="flex flex-col items-center gap-4">
+                  <div className="relative w-full flex flex-col sm:flex-row items-center gap-4">
                     <Mail className="absolute left-4 top-1/2 -translate-y-1/2 h-6 w-6 text-muted-foreground" />
                     <Input
                       type="email"
-                      placeholder="Enter your email for instant access..."
+                      placeholder="Enter your email "
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="pl-14 h-16 text-lg bg-background/50 backdrop-blur border border-primary/30 focus:border-primary focus:ring-primary rounded-2xl"
+                      className="w-full pl-14 h-16 text-lg bg-background/50 backdrop-blur border border-primary/30 focus:border-primary focus:ring-primary rounded-2xl"
+                      disabled={isSubmitting}
+                      required
+                    />
+                    <Input
+                      type="text"
+                      placeholder="Enter your name..."
+                      className="w-full pl-6 h-16 text-lg bg-background/50 backdrop-blur border border-primary/30 focus:border-primary focus:ring-primary rounded-2xl"
                       disabled={isSubmitting}
                       required
                     />
                   </div>
+                 
 
                   <Button
                     type="submit"
                     size="lg"
-                    className="h-16 px-10 bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg rounded-2xl shadow-2xl shadow-primary/30 hover:shadow-primary/50 transform hover:scale-105 transition-all duration-300"
+                    className="h-16 w-full sm:w-auto px-10 bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg rounded-2xl shadow-2xl shadow-primary/30 hover:shadow-primary/50 transform hover:scale-105 transition-all duration-300"
                     disabled={isSubmitting}
                   >
-                    {isSubmitting ? "Unlocking..." : "Unlock the Vault – $47"}
+                    {isSubmitting ? "Get Free Guide" : " Get Free Guide"}
                   </Button>
                 </div>
               </form>
