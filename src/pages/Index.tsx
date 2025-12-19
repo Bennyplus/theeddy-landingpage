@@ -133,16 +133,16 @@ const Index = () => {
               {/* Headline */}
               <div className="space-y-4">
                 <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight">
-                  <span className="text-primary">Smart Hustle AI Vault</span>
+                  <span className="text-primary">Smart Hustle Blueprint </span>
                   <br />
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
-                    10× Your Content, Marketing & Income
+                   Build Digital Income With Just Your Phone
                   </span>
                 </h1>
 
-                <p className="text-xl lg:text-2xl text-foreground/80 max-w-3xl mx-auto">
-                  Hand-picked AI tools, plug-and-play prompts, and proven
-                  playbooks the top 1% use — without burning out.
+                <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
+                 A beginner-friendly system showing how to turn content, affiliate marketing, and smart automation into consistent online income.
+
                 </p>
               </div>
 
@@ -163,18 +163,18 @@ const Index = () => {
                   <div className="relative w-full flex flex-col sm:flex-row items-center gap-4">
                     <Mail className="absolute left-4 top-1/2 -translate-y-1/2 h-6 w-6 text-muted-foreground" />
                     <Input
-                      type="email"
-                      placeholder="Enter your email "
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      className="w-full pl-14 h-16 text-lg bg-background/50 backdrop-blur border border-primary/30 focus:border-primary focus:ring-primary rounded-2xl"
+                      type="text"
+                      placeholder="Enter your First name..."
+                      className="w-full pl-6 h-16 text-lg bg-background/50 backdrop-blur border border-primary/30 focus:border-primary focus:ring-primary rounded-2xl"
                       disabled={isSubmitting}
                       required
                     />
-                    <Input
-                      type="text"
-                      placeholder="Enter your name..."
-                      className="w-full pl-6 h-16 text-lg bg-background/50 backdrop-blur border border-primary/30 focus:border-primary focus:ring-primary rounded-2xl"
+                     <Input
+                      type="email"
+                      placeholder="Enter your email... "
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className="w-full pl-14 h-16 text-lg bg-background/50 backdrop-blur border border-primary/30 focus:border-primary focus:ring-primary rounded-2xl"
                       disabled={isSubmitting}
                       required
                     />

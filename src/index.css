@@ -2,57 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Design system — DARK ONLY — Modern SaaS / Product landing vibe */
+/* Design system — DARK ONLY — Modern Purple / Midnight Tech */
 @layer base {
   :root {
-    /* Core background — blue-black charcoal */
-    --background: 222 47% 6%;
-    --foreground: 210 40% 96%;
+    /* Core background */
+    --background: 255 40% 5%;           /* near-black purple */
+    --foreground: 0 0% 96%;
 
-    --card: 222 45% 11%;
-    --card-foreground: 210 40% 96%;
+    /* Surfaces */
+    --card: 255 35% 10%;
+    --card-foreground: 0 0% 96%;
 
-    --popover: 222 45% 11%;
-    --popover-foreground: 210 40% 96%;
+    --popover: 255 35% 10%;
+    --popover-foreground: 0 0% 96%;
 
-    /* Primary = Electric Teal (CTAs, focus, key actions) */
-    --primary: 188 90% 55%;
-    --primary-foreground: 222 47% 6%;
+    /* Primary — Electric Violet (CTAs, highlights) */
+    --primary: 268 90% 62%;
+    --primary-foreground: 0 0% 100%;
 
-    /* Secondary = Soft Violet-Blue (links, secondary buttons) */
-    --secondary: 250 65% 65%;
-    --secondary-foreground: 0 0% 100%;
+    /* Secondary — Soft Neon Lavender */
+    --secondary: 255 80% 70%;
+    --secondary-foreground: 255 40% 8%;
 
-    --muted: 222 30% 18%;
-    --muted-foreground: 215 20% 70%;
+    /* Muted */
+    --muted: 255 30% 18%;
+    --muted-foreground: 255 20% 70%;
 
-    /* Accent = Muted Coral (badges, highlights) */
-    --accent: 12 85% 65%;
-    --accent-foreground: 222 47% 6%;
+    /* Accent — Cool Indigo glow */
+    --accent: 230 85% 65%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 80% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 222 30% 22%;
-    --input: 222 30% 22%;
-    --ring: 188 90% 55%;
+    /* Borders & focus */
+    --border: 255 25% 20%;
+    --input: 255 25% 20%;
+    --ring: 268 90% 62%;
 
-    --radius: 0.75rem;
+    --radius: 0.9rem;
 
-    /* Custom tokens */
-    --hero-gradient-from: 222 50% 12%;
-    --hero-gradient-via: 210 60% 18%;
-    --hero-gradient-to: 188 90% 55%;
+    /* Gradients */
+    --hero-gradient-from: 255 60% 18%;  /* deep purple */
+    --hero-gradient-mid: 270 80% 35%;   /* rich violet */
+    --hero-gradient-to: 230 80% 30%;    /* indigo blue */
 
-    --subtle-gradient-start: 222 47% 4%;
-    --subtle-gradient-end: 222 47% 9%;
+    --subtle-gradient-start: 255 40% 4%;
+    --subtle-gradient-end: 255 40% 9%;
 
-    --glass-bg: 222 40% 14%;
-    --glass-border: 222 30% 28%;
-    --trust-text: 188 70% 70%;
+    /* Utility tones */
+    --glass-bg: 255 35% 12%;
+    --glass-border: 255 30% 22%;
   }
 
-  /* Lock dark mode */
   html {
     color-scheme: dark;
   }
@@ -70,68 +72,8 @@
     );
   }
 
-  /* Headings — clean, modern, not over-colored */
   h1, h2, h3, h4, h5, h6 {
-    @apply font-semibold tracking-tight text-foreground;
+    @apply font-semibold tracking-tight;
+    color: hsl(var(--foreground));
   }
-}
-
-@layer utilities {
-  /* Animated background blobs */
-  @keyframes blob {
-    0% { transform: translate(0, 0) scale(1); }
-    33% { transform: translate(30px, -40px) scale(1.08); }
-    66% { transform: translate(-20px, 20px) scale(0.92); }
-    100% { transform: translate(0, 0) scale(1); }
-  }
-
-  .animate-blob {
-    animation: blob 22s infinite;
-  }
-
-  .animation-delay-2000 { animation-delay: 2s; }
-  .animation-delay-4000 { animation-delay: 4s; }
-
-  /* Hero gradient */
-  .hero-gradient {
-    background: linear-gradient(
-      135deg,
-      hsl(var(--hero-gradient-from)),
-      hsl(var(--hero-gradient-via)),
-      hsl(var(--hero-gradient-to))
-    );
-  }
-
-  /* Glassmorphism utility (very modern) */
-  .glass {
-    background-color: hsl(var(--glass-bg) / 0.6);
-    backdrop-filter: blur(14px);
-    border: 1px solid hsl(var(--glass-border));
-  }
-
-  /* Fade-up animation */
-  @keyframes fadeUp {
-    from {
-      opacity: 0;
-      transform: translateY(32px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .animate-fade-up {
-    animation: fadeUp 0.7s ease-out forwards;
-  }
-
-  /* Semantic helpers */
-  .text-primary { color: hsl(var(--primary)); }
-  .text-secondary { color: hsl(var(--secondary)); }
-  .text-accent { color: hsl(var(--accent)); }
-  .text-trust { color: hsl(var(--trust-text)); }
-
-  .bg-primary { background-color: hsl(var(--primary)); }
-  .bg-secondary { background-color: hsl(var(--secondary)); }
-  .bg-accent { background-color: hsl(var(--accent)); }
 }
