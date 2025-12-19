@@ -146,13 +146,6 @@ const Index = () => {
                 </p>
               </div>
 
-              {/* Social Proof */}
-              <div className="text-center ">
-                <p className="text-lg italic text-trust">
-                  “Went from 2 posts/week to daily content + $8k extra affiliate
-                  revenue in 47 days.” — @hustlerpro
-                </p>
-              </div>
 
               {/* Email Form + CTA */}
               <form
@@ -187,7 +180,7 @@ const Index = () => {
                     className="h-16 w-full sm:w-auto px-10 bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg rounded-2xl shadow-2xl shadow-primary/30 hover:shadow-primary/50 transform hover:scale-105 transition-all duration-300"
                     disabled={isSubmitting}
                   >
-                    {isSubmitting ? "Get Free Guide" : " Get Free Guide"}
+                    {isSubmitting ? "Get the Free Blueprint" : " Get the Free Blueprint"}
                   </Button>
                 </div>
               </form>
