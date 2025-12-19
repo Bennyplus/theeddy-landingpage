@@ -146,6 +146,10 @@ const Index = () => {
                 </p>
               </div>
 
+              <div>
+                <p  className="text-lg italic text-foreground/80 max-w-3xl mx-auto">Designed for students, 9–5 workers & hustlers</p>
+              </div>
+
 
               {/* Email Form + CTA */}
               <form
