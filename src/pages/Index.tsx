@@ -154,7 +154,6 @@ const Index = () => {
               >
                 <div className="flex flex-col items-center gap-4">
                   <div className="relative w-full flex flex-col sm:flex-row items-center gap-4">
-                    <Mail className="absolute left-4 top-1/2 -translate-y-1/2 h-6 w-6 text-muted-foreground" />
                     <Input
                       type="text"
                       placeholder="Enter your First name..."
